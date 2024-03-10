@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>289704779947-5a8hudruo5s8qo4n7h0ov007akn86v1a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.289704779947-5a8hudruo5s8qo4n7h0ov007akn86v1a</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-8YWQPhOkPAQqqEaQlD1Mz5Z4LFAT5OM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>289704779947</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>YangCustom.LineMessenger</string>
+	<key>PROJECT_ID</key>
+	<string>linemessenger-e8b32</string>
+	<key>STORAGE_BUCKET</key>
+	<string>linemessenger-e8b32.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:289704779947:ios:fc133a375e268edd2a57ee</string>
+</dict>
+</plist>
