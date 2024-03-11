@@ -19,12 +19,24 @@ enum AuthenticationError : Error {
 }
 
 protocol AuthenticationServiceType {
+    func checkAuthenticationState() -> String?
     func signInWithGoogle() -> AnyPublisher<User,ServiceError>
     func handleSignInWithAppleRequest(_ request : ASAuthorizationAppleIDRequest) -> String
     func handleSignInWithAppleCompletion(_ authorization: ASAuthorization , none: String) -> AnyPublisher<User,ServiceError>
+    func logout() -> AnyPublisher<Void,ServiceError>
 }
 
 class AuthenticationService : AuthenticationServiceType {
+    
+    
+    func checkAuthenticationState() -> String? {
+        if let user = Auth.auth().currentUser {
+            return user.uid
+        } else {
+            return nil
+        }
+    }
+    
     func signInWithGoogle() -> AnyPublisher<User,ServiceError>{
         Future { [weak self] promise in
             self?.signInWithGoogle { result in
@@ -47,9 +59,27 @@ class AuthenticationService : AuthenticationServiceType {
     }
     func handleSignInWithAppleCompletion(_ authorization: ASAuthorization , none: String) -> AnyPublisher<User,ServiceError> {
         Future {
-            promise in
+           [weak self] promise in
+            self?.handleSignInWithAppleCompletion(authorization, nonce: none) { result in
+                switch result {
+                case let .success(user):
+                    promise(.success(user))
+                case let .failure(error):
+                    promise(.failure(.error(error)))
+                }
+            }
             
-        }
+        }.eraseToAnyPublisher()
+    }
+    func logout() -> AnyPublisher<Void,ServiceError>{
+        Future {promise in
+            do {
+                try Auth.auth().signOut()
+                promise(.success(()))
+            }catch {
+                promise(.failure(.error(error)))
+            }
+        }.eraseToAnyPublisher()
     }
 }
 
@@ -141,6 +171,14 @@ extension AuthenticationService{
 
 
 class StubAuthenticationService : AuthenticationServiceType {
+    func logout() -> AnyPublisher<Void, ServiceError> {
+        Empty().eraseToAnyPublisher()
+    }
+    
+    func checkAuthenticationState() -> String? {
+        return nil
+    }
+    
     func signInWithGoogle() -> AnyPublisher<User,ServiceError>{
         Empty().eraseToAnyPublisher()
     }
