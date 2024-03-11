@@ -32,6 +32,10 @@
 		8E7FB8D22B9EE2E800F05045 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8D12B9EE2E800F05045 /* ServiceError.swift */; };
 		8E7FB8D62B9F489800F05045 /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8D52B9F489800F05045 /* RandomNonceString.swift */; };
 		8E7FB8D82B9F48AB00F05045 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8D72B9F48AB00F05045 /* SHA256.swift */; };
+		8E7FB8DA2B9F57E800F05045 /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8D92B9F57E800F05045 /* MainTabType.swift */; };
+		8E7FB8DE2B9F586A00F05045 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8DD2B9F586A00F05045 /* ChatListView.swift */; };
+		8E7FB8E02B9F586F00F05045 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8DF2B9F586F00F05045 /* HomeView.swift */; };
+		8E7FB8E22B9F5A7F00F05045 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8E12B9F5A7F00F05045 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		8E7FB8D32B9EFACD00F05045 /* LineMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LineMessenger.entitlements; sourceTree = "<group>"; };
 		8E7FB8D52B9F489800F05045 /* RandomNonceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
 		8E7FB8D72B9F48AB00F05045 /* SHA256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
+		8E7FB8D92B9F57E800F05045 /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
+		8E7FB8DD2B9F586A00F05045 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		8E7FB8DF2B9F586F00F05045 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8E7FB8E12B9F5A7F00F05045 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				8E7FB8C22B9DEE8F00F05045 /* MainTab */,
+				8E7FB8DC2B9F585E00F05045 /* ChatList */,
+				8E7FB8DB2B9F584F00F05045 /* Home */,
 				8E7FB8C12B9DEE8100F05045 /* Login */,
 				8E7FB8B32B9DE9DC00F05045 /* Authentication */,
 			);
@@ -234,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				8E7FB8C52B9DEECD00F05045 /* MainTabView.swift */,
+				8E7FB8D92B9F57E800F05045 /* MainTabType.swift */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -253,6 +264,23 @@
 				8E7FB8D72B9F48AB00F05045 /* SHA256.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		8E7FB8DB2B9F584F00F05045 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8E7FB8DF2B9F586F00F05045 /* HomeView.swift */,
+				8E7FB8E12B9F5A7F00F05045 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8E7FB8DC2B9F585E00F05045 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				8E7FB8DD2B9F586A00F05045 /* ChatListView.swift */,
+			);
+			path = ChatList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7FB8E22B9F5A7F00F05045 /* HomeViewModel.swift in Sources */,
 				8E7FB8BC2B9DEBA100F05045 /* AppDelegate.swift in Sources */,
 				8E7FB87F2B9DE37700F05045 /* AuthenticatedView.swift in Sources */,
 				8E7FB8C62B9DEECD00F05045 /* MainTabView.swift in Sources */,
@@ -405,12 +434,15 @@
 				8E7FB87D2B9DE37700F05045 /* LineMessengerApp.swift in Sources */,
 				8E7FB8D62B9F489800F05045 /* RandomNonceString.swift in Sources */,
 				8E7FB8C02B9DECA500F05045 /* AuthenticationService.swift in Sources */,
+				8E7FB8E02B9F586F00F05045 /* HomeView.swift in Sources */,
 				8E7FB8D22B9EE2E800F05045 /* ServiceError.swift in Sources */,
+				8E7FB8DA2B9F57E800F05045 /* MainTabType.swift in Sources */,
 				8E7FB8D02B9EE29700F05045 /* User.swift in Sources */,
 				8E7FB8D82B9F48AB00F05045 /* SHA256.swift in Sources */,
 				8E7FB8C82B9ED8FB00F05045 /* LoginView.swift in Sources */,
 				8E7FB8C42B9DEEAB00F05045 /* LoginIntroView.swift in Sources */,
 				8E7FB8CA2B9ED9E200F05045 /* LoginButtonStyle.swift in Sources */,
+				8E7FB8DE2B9F586A00F05045 /* ChatListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
