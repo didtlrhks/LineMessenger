@@ -25,6 +25,7 @@
 		8E7FB8C02B9DECA500F05045 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8BF2B9DECA500F05045 /* AuthenticationService.swift */; };
 		8E7FB8C42B9DEEAB00F05045 /* LoginIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8C32B9DEEAB00F05045 /* LoginIntroView.swift */; };
 		8E7FB8C62B9DEECD00F05045 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8C52B9DEECD00F05045 /* MainTabView.swift */; };
+		8E7FB8C82B9ED8FB00F05045 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8C72B9ED8FB00F05045 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		8E7FB8BF2B9DECA500F05045 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		8E7FB8C32B9DEEAB00F05045 /* LoginIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntroView.swift; sourceTree = "<group>"; };
 		8E7FB8C52B9DEECD00F05045 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		8E7FB8C72B9ED8FB00F05045 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				8E7FB8C32B9DEEAB00F05045 /* LoginIntroView.swift */,
+				8E7FB8C72B9ED8FB00F05045 /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				8E7FB8AE2B9DE91100F05045 /* DIContainer.swift in Sources */,
 				8E7FB87D2B9DE37700F05045 /* LineMessengerApp.swift in Sources */,
 				8E7FB8C02B9DECA500F05045 /* AuthenticationService.swift in Sources */,
+				8E7FB8C82B9ED8FB00F05045 /* LoginView.swift in Sources */,
 				8E7FB8C42B9DEEAB00F05045 /* LoginIntroView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
