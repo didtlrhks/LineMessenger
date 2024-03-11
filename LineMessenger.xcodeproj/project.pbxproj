@@ -30,6 +30,8 @@
 		8E7FB8CD2B9EE17900F05045 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8E7FB8CC2B9EE17900F05045 /* GoogleSignIn */; };
 		8E7FB8D02B9EE29700F05045 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8CF2B9EE29700F05045 /* User.swift */; };
 		8E7FB8D22B9EE2E800F05045 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8D12B9EE2E800F05045 /* ServiceError.swift */; };
+		8E7FB8D62B9F489800F05045 /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8D52B9F489800F05045 /* RandomNonceString.swift */; };
+		8E7FB8D82B9F48AB00F05045 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB8D72B9F48AB00F05045 /* SHA256.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		8E7FB8CF2B9EE29700F05045 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8E7FB8D12B9EE2E800F05045 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		8E7FB8D32B9EFACD00F05045 /* LineMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LineMessenger.entitlements; sourceTree = "<group>"; };
+		8E7FB8D52B9F489800F05045 /* RandomNonceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
+		8E7FB8D72B9F48AB00F05045 /* SHA256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		8E7FB87B2B9DE37700F05045 /* LineMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				8E7FB8D42B9F483D00F05045 /* Util */,
 				8E7FB8D32B9EFACD00F05045 /* LineMessenger.entitlements */,
 				8E7FB8CE2B9EE29000F05045 /* Model */,
 				8E7FB8BD2B9DEC3D00F05045 /* GoogleService-Info.plist */,
@@ -239,6 +244,15 @@
 				8E7FB8CF2B9EE29700F05045 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8E7FB8D42B9F483D00F05045 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8E7FB8D52B9F489800F05045 /* RandomNonceString.swift */,
+				8E7FB8D72B9F48AB00F05045 /* SHA256.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,9 +403,11 @@
 				8E7FB8B12B9DE93100F05045 /* Services.swift in Sources */,
 				8E7FB8AE2B9DE91100F05045 /* DIContainer.swift in Sources */,
 				8E7FB87D2B9DE37700F05045 /* LineMessengerApp.swift in Sources */,
+				8E7FB8D62B9F489800F05045 /* RandomNonceString.swift in Sources */,
 				8E7FB8C02B9DECA500F05045 /* AuthenticationService.swift in Sources */,
 				8E7FB8D22B9EE2E800F05045 /* ServiceError.swift in Sources */,
 				8E7FB8D02B9EE29700F05045 /* User.swift in Sources */,
+				8E7FB8D82B9F48AB00F05045 /* SHA256.swift in Sources */,
 				8E7FB8C82B9ED8FB00F05045 /* LoginView.swift in Sources */,
 				8E7FB8C42B9DEEAB00F05045 /* LoginIntroView.swift in Sources */,
 				8E7FB8CA2B9ED9E200F05045 /* LoginButtonStyle.swift in Sources */,

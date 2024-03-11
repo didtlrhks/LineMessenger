@@ -34,12 +34,12 @@ struct LoginView: View {
                 Text("구글로 로그인")
             }.buttonStyle(LoginButtonStyle(textColor: .bkText,borderColor: .greyLight))
             
-            Button{
+            SignInWithAppleButton { request in
+                authViewModel.send(action: .appleLogin(request))
+            }onCompletion: { result in
                 
-            }label: {
-                Text("Apple로 로그인")
-                
-            }.buttonStyle(LoginButtonStyle(textColor: .bkText,borderColor: .greyLight))
+            }
+            
         }
         .navigationBarBackButtonHidden()
         .toolbar{

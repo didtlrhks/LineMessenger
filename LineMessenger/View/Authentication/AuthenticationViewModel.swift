@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import AuthenticationServices
 
 
 enum AuthenticationState {
@@ -19,12 +20,14 @@ class AuthenticationViewModel : ObservableObject {
     
     enum Action {
         case googleLogin
+        case appleLogin(ASAuthorizationAppleIDRequest)
+        case appleLoginCompletion(Result<ASAuthorization, Error>)
     }
     
     @Published var authenticationState : AuthenticationState = .unauthenticated
     
     var userId : String?
-    
+    private var currentNonce : String?
     private var container : DIContainer
     private var subscriptions = Set<AnyCancellable>()
     
@@ -43,7 +46,12 @@ class AuthenticationViewModel : ObservableObject {
                     self?.userId = user.id
                     
                 }.store(in: &subscriptions)
-        return
+        case let .appleLogin(request) :
+            let nonce = container.services.authService.handleSignInWithAppleRequest(request)
+            currentNonce = nonce
+            
+        case let .appleLoginCompletion(result):
+       
         }
     }
 }
