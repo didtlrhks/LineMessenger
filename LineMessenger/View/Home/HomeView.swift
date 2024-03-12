@@ -57,6 +57,8 @@ struct HomeView : View {
                 } label : {
                     Image("settings")
                 }
+            }.onAppear{
+                viewModel.send(action: .load)
             }
         }
     }
