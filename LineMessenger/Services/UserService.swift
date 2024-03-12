@@ -17,6 +17,7 @@ class UserService : UserServiceType {
     init(dbRepository : UserDBRepositoryType) {
         self.dbRepository = dbRepository
     }
+    
     func addUser(_ user : User) -> AnyPublisher<User,ServiceError> {
         dbRepository.addUser(user.toObject())
             .map{user}

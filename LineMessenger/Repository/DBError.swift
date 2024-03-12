@@ -9,4 +9,5 @@ import Foundation
 
 enum DBError : Error {
     case error(Error)
+    case emptyValue
 }
