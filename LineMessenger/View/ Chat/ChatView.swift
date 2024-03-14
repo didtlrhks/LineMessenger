@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import _PhotosUI_SwiftUI
 
 struct ChatView: View {
     @StateObject var viewModel: ChatViewModel
@@ -51,9 +52,7 @@ struct ChatView: View {
                 }label: {
                     Image("other_add")
                 }
-                Button {
-                    
-                }label: {
+                PhotosPicker(selection:$viewModel.imageSelection,matching:.images) {
                     Image("image_add")
                 }
                 Button {
@@ -66,16 +65,23 @@ struct ChatView: View {
                     .font(.system(size:16))
                     .foregroundColor(.bkText)
                     .focused($isFocused)
+                    .padding(.vertical,6)
+                    .padding(.horizontal,13)
                     .background(Color.greyCool)
                     .cornerRadius(20)
                 
                 Button{
-                    
+                    viewModel.send(action: .addChat(viewModel.message))
+                    isFocused = false
                 }label: {
                     Image("send")
                 }
+                .disabled(viewModel.message.isEmpty)
             }
             .padding(.horizontal,27)
+        }
+        .onAppear{
+            viewModel.send(action: .load)
         }
     }
     

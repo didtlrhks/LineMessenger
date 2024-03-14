@@ -24,10 +24,10 @@ extension ChatRoomObject {
     }
 }
 //
-//extension ChatRoomObject {
-//    static var stub1: ChatRoomObject {
-//        .init(chatRoomId: "chatRoom1_id",
-//              otherUserName: "user2",
-//              otherUseId: "user2_id")
-//    }
-//}
+extension ChatRoomObject {
+    static var stub1: ChatRoomObject {
+        .init(chatRoomId: "chatRoom1_id",
+              otherUserName: "user2",
+              otherUseId: "user2_id")
+    }
+}

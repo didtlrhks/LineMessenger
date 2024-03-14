@@ -28,12 +28,12 @@ struct Chat: Hashable, Identifiable {
     }
 }
 //
-//extension Chat {
-//    func toObject() -> ChatObject {
-//        .init(chatId: chatId,
-//              userId: userId,
-//              message: message,
-//              photoURL: photoURL,
-//              date: date.timeIntervalSince1970)
-//    }
-//}
+extension Chat {
+    func toObject() -> ChatObject {
+        .init(chatId: chatId,
+              userId: userId,
+              message: message,
+              photoURL: photoURL,
+              date: date.timeIntervalSince1970)
+    }
+}
