@@ -85,13 +85,25 @@ struct ChatView: View {
         }
     }
     
-    var contentView :some View {
-        ForEach(viewModel.chatDataList) {
-            chatData in
-            Section{
-                ForEach(chatData.chats) {
-                    chat in
-                    ChatItemView(message: chat.message ?? "", direcion: viewModel.getDirection(id: chat.userId), date: chat.date)
+    var contentView: some View {
+        ForEach(viewModel.chatDataList) { chatData in
+            Section {
+                ForEach(chatData.chats) { chat in
+                    if let message = chat.message {
+                        ChatItemView(message: message,
+                                     direcion: viewModel.getDirection(id: chat.userId),
+                                     date: chat.date)
+                        .id(chat.chatId)
+                        .accessibilityElement(children: .combine)
+                    } else if let photoURL = chat.photoURL {
+                        ChatImageItemView(urlString: photoURL,
+                                          direction: viewModel.getDirection(id: chat.userId),
+                                          date: chat.date)
+                        .id(chat.chatId)
+                        .accessibilityElement(children: .combine)
+                        .accessibility(addTraits: .isImage)
+                    }
+                    
                 }
             } header: {
                 headerView(dateStr: chatData.dateStr)
