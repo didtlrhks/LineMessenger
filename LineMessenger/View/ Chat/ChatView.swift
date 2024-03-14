@@ -13,18 +13,24 @@ struct ChatView: View {
     @FocusState private var isFocused: Bool
     @EnvironmentObject var navigationRouter : NavigationRouter
     var body: some View {
-        ScrollView {
-            if viewModel.chatDataList.isEmpty {
-                Color.chatBg
+        ScrollViewReader { proxy in
+            ScrollView {
+                if viewModel.chatDataList.isEmpty {
+                    Color.chatBg
+                }
+                else {
+                    contentView
+                }
             }
-            else {
-                contentView
+            .onChange(of:viewModel.chatDataList.last?.chats) {
+                newValue in
+                proxy.scrollTo(newValue?.last?.id,anchor:.bottom)
             }
         }
         .background(Color.chatBg)
         .navigationBarBackButtonHidden()
         .toolbar(.hidden, for: .tabBar)
-        //        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(Color.chatBg, for: .navigationBar)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {

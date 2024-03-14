@@ -87,6 +87,14 @@ class ChatViewModel : ObservableObject {
         case let .addChat(message) :
             let chat : Chat = .init(chatId: UUID().uuidString, userId: myUserId,message: message, date: Date())
             container.services.chatService.addChat(chat, to: chatRoomId)
+                .flatMap{ chat in
+                   
+                     self.container.services.chatRoomService.updateChatRoomLastMessage(chatRoomId: self.chatRoomId,
+                                                                                             myUserId: self.myUserId,
+                                                                                             myUserName: self.myUser?.name ?? "",
+                                                                                             otherUserId: self.otherUserId,
+                                                                                             lastMessage: chat.lastMessage)
+                }
                 .sink {
                     completion in
                     
@@ -107,7 +115,14 @@ class ChatViewModel : ObservableObject {
                     url in
                     let chat: Chat = .init(chatId: UUID().uuidString, userId: self.myUserId,photoURL: url.absoluteString, date: Date())
                     return self.container.services.chatService.addChat(chat, to: self.chatRoomId)
-                }
+                } .flatMap{ chat in
+                    
+                    self.container.services.chatRoomService.updateChatRoomLastMessage(chatRoomId: self.chatRoomId,
+                                                                                            myUserId: self.myUserId,
+                                                                                            myUserName: self.myUser?.name ?? "",
+                                                                                            otherUserId: self.otherUserId,
+                                                                                            lastMessage: chat.lastMessage)
+               }
                 .sink {
                     completion in
                     
