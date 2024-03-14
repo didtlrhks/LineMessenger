@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct HomeView : View {
+    @EnvironmentObject var container: DIContainer
     @StateObject var viewModel : HomeViewModel
     
     var body : some View
@@ -18,7 +19,7 @@ struct HomeView : View {
                 .fullScreenCover(item: $viewModel.modalDestination){
                     switch $0 {
                     case .myProfile:
-                        MyProfilView()
+                        MyProfileView(viewModel: .init(container: container, userId : viewModel.userId))
                         
                     case let .otherProfile(userId):
                         OtherProfilView()
