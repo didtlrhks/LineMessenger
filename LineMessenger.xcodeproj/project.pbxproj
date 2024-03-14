@@ -20,6 +20,11 @@
 		8E2D26EE2BA303EB006248EA /* UploadProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26ED2BA303EB006248EA /* UploadProvider.swift */; };
 		8E2D26F02BA30432006248EA /* UploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26EF2BA30432006248EA /* UploadService.swift */; };
 		8E2D26F22BA305B0006248EA /* UploadSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26F12BA305B0006248EA /* UploadSourceType.swift */; };
+		8E2D26F42BA30EEA006248EA /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26F32BA30EEA006248EA /* ImageCacheService.swift */; };
+		8E2D26F62BA30F8E006248EA /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26F52BA30F8E006248EA /* MemoryStorage.swift */; };
+		8E2D26F82BA31012006248EA /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26F72BA31012006248EA /* DiskStorage.swift */; };
+		8E2D26FA2BA31140006248EA /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26F92BA31140006248EA /* URLImageView.swift */; };
+		8E2D26FC2BA3116E006248EA /* URLImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26FB2BA3116E006248EA /* URLImageViewModel.swift */; };
 		8E7FB87D2B9DE37700F05045 /* LineMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB87C2B9DE37700F05045 /* LineMessengerApp.swift */; };
 		8E7FB87F2B9DE37700F05045 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB87E2B9DE37700F05045 /* AuthenticatedView.swift */; };
 		8E7FB8812B9DE37900F05045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FB8802B9DE37900F05045 /* Assets.xcassets */; };
@@ -91,6 +96,11 @@
 		8E2D26ED2BA303EB006248EA /* UploadProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProvider.swift; sourceTree = "<group>"; };
 		8E2D26EF2BA30432006248EA /* UploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadService.swift; sourceTree = "<group>"; };
 		8E2D26F12BA305B0006248EA /* UploadSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSourceType.swift; sourceTree = "<group>"; };
+		8E2D26F32BA30EEA006248EA /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		8E2D26F52BA30F8E006248EA /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
+		8E2D26F72BA31012006248EA /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
+		8E2D26F92BA31140006248EA /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		8E2D26FB2BA3116E006248EA /* URLImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageViewModel.swift; sourceTree = "<group>"; };
 		8E7FB8792B9DE37700F05045 /* LineMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7FB87C2B9DE37700F05045 /* LineMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineMessengerApp.swift; sourceTree = "<group>"; };
 		8E7FB87E2B9DE37700F05045 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -272,6 +282,9 @@
 				8E2D26E62BA30139006248EA /* PhotoImage.swift */,
 				8E2D26EF2BA30432006248EA /* UploadService.swift */,
 				8E2D26F12BA305B0006248EA /* UploadSourceType.swift */,
+				8E2D26F32BA30EEA006248EA /* ImageCacheService.swift */,
+				8E2D26F52BA30F8E006248EA /* MemoryStorage.swift */,
+				8E2D26F72BA31012006248EA /* DiskStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -288,6 +301,8 @@
 				8E7FB8F42BA091BB00F05045 /* PlaceholderView.swift */,
 				8E7FB8F62BA091F000F05045 /* LoadingView.swift */,
 				8E7FB8F82BA0925A00F05045 /* ErrorView.swift */,
+				8E2D26F92BA31140006248EA /* URLImageView.swift */,
+				8E2D26FB2BA3116E006248EA /* URLImageViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,8 +562,11 @@
 				8E2D26E32BA2F6B0006248EA /* MyProfileDescEditView.swift in Sources */,
 				8E7FB8B52B9DEA0800F05045 /* AuthenticationViewModel.swift in Sources */,
 				8E7FB8B12B9DE93100F05045 /* Services.swift in Sources */,
+				8E2D26F42BA30EEA006248EA /* ImageCacheService.swift in Sources */,
 				8E7FB8F72BA091F000F05045 /* LoadingView.swift in Sources */,
+				8E2D26FC2BA3116E006248EA /* URLImageViewModel.swift in Sources */,
 				8E7FB8AE2B9DE91100F05045 /* DIContainer.swift in Sources */,
+				8E2D26F82BA31012006248EA /* DiskStorage.swift in Sources */,
 				8E7FB87D2B9DE37700F05045 /* LineMessengerApp.swift in Sources */,
 				8E2D26E72BA30139006248EA /* PhotoImage.swift in Sources */,
 				8E2D26DD2BA2EA6A006248EA /* ContactService.swift in Sources */,
@@ -560,6 +578,7 @@
 				8E2D26EE2BA303EB006248EA /* UploadProvider.swift in Sources */,
 				8E7FB8E02B9F586F00F05045 /* HomeView.swift in Sources */,
 				8E2D26F02BA30432006248EA /* UploadService.swift in Sources */,
+				8E2D26FA2BA31140006248EA /* URLImageView.swift in Sources */,
 				8E7FB8D22B9EE2E800F05045 /* ServiceError.swift in Sources */,
 				8E2D26D92BA2E4A1006248EA /* MyProfilView.swift in Sources */,
 				8E7FB8DA2B9F57E800F05045 /* MainTabType.swift in Sources */,
@@ -571,6 +590,7 @@
 				8E7FB8C82B9ED8FB00F05045 /* LoginView.swift in Sources */,
 				8E2D26F22BA305B0006248EA /* UploadSourceType.swift in Sources */,
 				8E7FB8FB2BA0943C00F05045 /* HomeModalDestination.swift in Sources */,
+				8E2D26F62BA30F8E006248EA /* MemoryStorage.swift in Sources */,
 				8E7FB8C42B9DEEAB00F05045 /* LoginIntroView.swift in Sources */,
 				8E2D26E12BA2F325006248EA /* MyProfileMenuType.swift in Sources */,
 				8E7FB8CA2B9ED9E200F05045 /* LoginButtonStyle.swift in Sources */,
