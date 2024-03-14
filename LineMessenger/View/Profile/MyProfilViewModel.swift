@@ -39,7 +39,7 @@ class MyProfilViewModel : ObservableObject {
             try await container.services.userService.updateDescription(userId: userId, description: description)
             userInfo?.description = description
         } catch {
-           // print(error.localizedDescription)
+            print(error.localizedDescription)
         }
     }
     
@@ -47,8 +47,12 @@ class MyProfilViewModel : ObservableObject {
         guard let pickerItem else {return }
         do {
             let data = try await container.services.photoPickerService.loadTransferable(from: pickerItem)
-        }catch {
+            let url = try await container.services.uploadService.uploadImage(source: .profile(userId: userId), data: data)
+            try await container.services.userService.updateProfileURL(userId: userId, urlString: url.absoluteString)
             
+            userInfo?.profileURL = url.absoluteString
+        }catch {
+            print(error.localizedDescription)
         }
     }
 }
