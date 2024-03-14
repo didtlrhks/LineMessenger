@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8E2D26D92BA2E4A1006248EA /* MyProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26D82BA2E4A1006248EA /* MyProfilView.swift */; };
 		8E2D26DB2BA2E4B1006248EA /* OtherProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26DA2BA2E4B1006248EA /* OtherProfilView.swift */; };
+		8E2D26DD2BA2EA6A006248EA /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26DC2BA2EA6A006248EA /* ContactService.swift */; };
+		8E2D26DF2BA2F131006248EA /* MyProfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2D26DE2BA2F131006248EA /* MyProfilViewModel.swift */; };
 		8E7FB87D2B9DE37700F05045 /* LineMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB87C2B9DE37700F05045 /* LineMessengerApp.swift */; };
 		8E7FB87F2B9DE37700F05045 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FB87E2B9DE37700F05045 /* AuthenticatedView.swift */; };
 		8E7FB8812B9DE37900F05045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FB8802B9DE37900F05045 /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 /* Begin PBXFileReference section */
 		8E2D26D82BA2E4A1006248EA /* MyProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilView.swift; sourceTree = "<group>"; };
 		8E2D26DA2BA2E4B1006248EA /* OtherProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfilView.swift; sourceTree = "<group>"; };
+		8E2D26DC2BA2EA6A006248EA /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		8E2D26DE2BA2F131006248EA /* MyProfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilViewModel.swift; sourceTree = "<group>"; };
 		8E7FB8792B9DE37700F05045 /* LineMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7FB87C2B9DE37700F05045 /* LineMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineMessengerApp.swift; sourceTree = "<group>"; };
 		8E7FB87E2B9DE37700F05045 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				8E7FB8BF2B9DECA500F05045 /* AuthenticationService.swift */,
 				8E7FB8D12B9EE2E800F05045 /* ServiceError.swift */,
 				8E7FB8E92B9FECFB00F05045 /* UserService.swift */,
+				8E2D26DC2BA2EA6A006248EA /* ContactService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 			children = (
 				8E2D26D82BA2E4A1006248EA /* MyProfilView.swift */,
 				8E2D26DA2BA2E4B1006248EA /* OtherProfilView.swift */,
+				8E2D26DE2BA2F131006248EA /* MyProfilViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7FB8F52BA091BB00F05045 /* PlaceholderView.swift in Sources */,
+				8E2D26DF2BA2F131006248EA /* MyProfilViewModel.swift in Sources */,
 				8E2D26DB2BA2E4B1006248EA /* OtherProfilView.swift in Sources */,
 				8E7FB8E22B9F5A7F00F05045 /* HomeViewModel.swift in Sources */,
 				8E7FB8ED2B9FEEFA00F05045 /* UserObject.swift in Sources */,
@@ -507,6 +514,7 @@
 				8E7FB8F72BA091F000F05045 /* LoadingView.swift in Sources */,
 				8E7FB8AE2B9DE91100F05045 /* DIContainer.swift in Sources */,
 				8E7FB87D2B9DE37700F05045 /* LineMessengerApp.swift in Sources */,
+				8E2D26DD2BA2EA6A006248EA /* ContactService.swift in Sources */,
 				8E7FB8F92BA0925A00F05045 /* ErrorView.swift in Sources */,
 				8E7FB8D62B9F489800F05045 /* RandomNonceString.swift in Sources */,
 				8E7FB8C02B9DECA500F05045 /* AuthenticationService.swift in Sources */,
@@ -694,6 +702,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LineMessenger/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "친구목록을 가져옵니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -725,6 +734,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LineMessenger/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "친구목록을 가져옵니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
