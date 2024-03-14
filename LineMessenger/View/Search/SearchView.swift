@@ -1,18 +1,18 @@
 //
 //  SearchView.swift
-//  LineMessenger
+//  LMessenger
 //
-//  Created by 양시관 on 3/14/24.
 //
 
 import SwiftUI
+import Foundation
 
-struct SearchView: View {
+struct SearchView:View {
+    @StateObject var viewModel:SearchViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("adf")
     }
 }
 
-#Preview {
-    SearchView()
-}
+

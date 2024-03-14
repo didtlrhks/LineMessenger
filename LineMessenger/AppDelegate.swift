@@ -5,17 +5,21 @@
 //  Created by 양시관 on 3/10/24.
 //
 
-import Foundation
-import FirebaseCore
 import UIKit
-import GoogleSignIn
+import FirebaseCore
 import FirebaseAuth
+import GoogleSignIn
+import FirebaseMessaging
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
+    
+      application.registerForRemoteNotifications()
+      
+      UNUserNotificationCenter.current().delegate = self
+      FirebaseApp.configure()
 
     return true
   }
@@ -23,5 +27,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                      open url : URL,
                      options : [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         return GIDSignIn.sharedInstance.handle(url)
+    }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
+}
+
+
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.badge, .banner])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
     }
 }
