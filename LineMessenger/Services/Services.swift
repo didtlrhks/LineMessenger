@@ -12,6 +12,7 @@ protocol ServiceType {
         get set 
     }
     var userService : UserServiceType {get set}
+ //   var contactService : ContactServiceType {get set}
 }
 
 class Services : ServiceType {
